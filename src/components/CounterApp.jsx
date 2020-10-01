@@ -3,14 +3,22 @@ import propTypes from 'prop-types'
 
 import '../styles/components/App.css'
 
-const CounterApp = ({value}) => {
+const CounterApp = ({value = 10}) => {
 
-    const [counter, setCounter] = useState(0);
+
+    const [counter, setCounter] = useState(value);
 
 
     const handleAdd = () => {
-        
         setCounter( counter +1)
+    }
+
+    const handleReset = () => {
+        setCounter(value)
+    }
+
+    const handleSubstract = () => {
+        setCounter( counter -1)
     }
 
     return (
@@ -21,12 +29,14 @@ const CounterApp = ({value}) => {
         <h2>{ counter }</h2>
       
         <button type="button" onClick={handleAdd}>+1</button>
+        <button type="button" onClick={handleReset}>Reset</button>
+        <button type="button" onClick={handleSubstract}>-1</button>
       </>
     )
 }
 
 CounterApp.propTypes = {
-    value: propTypes.number.isRequired
+    value: propTypes.number
 }
 
 export default CounterApp
