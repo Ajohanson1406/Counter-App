@@ -1,9 +1,8 @@
 import React from 'react';
-import propTypes from 'prop-types'
+import propTypes from 'prop-types';
 
-import '../styles/components/App.css';
 
-const App = ({saludo}) => {
+const App = ({saludo, subtitulo}) => {
 
     
 
@@ -14,13 +13,16 @@ const App = ({saludo}) => {
           { saludo }
         </h1>
 
-        <p>Mi primera aplicasion</p>
+        <p>{ subtitulo }</p>
       </>
     );
 };
 
 App.propTypes = {
     saludo: propTypes.string.isRequired
+}
+App.defaultProps = {
+  subtitulo: 'Soy un Subtitulo'
 }
 
 export default App;

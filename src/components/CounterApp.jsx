@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import propTypes from 'prop-types'
 
-import '../styles/components/App.css'
 
 const CounterApp = ({value = 10}) => {
 
@@ -31,12 +30,13 @@ const CounterApp = ({value = 10}) => {
         <button type="button" onClick={handleAdd}>+1</button>
         <button type="button" onClick={handleReset}>Reset</button>
         <button type="button" onClick={handleSubstract}>-1</button>
+
       </>
     )
 }
 
 CounterApp.propTypes = {
-    value: propTypes.number
+    value: propTypes.number.isRequired
 }
 
 export default CounterApp
